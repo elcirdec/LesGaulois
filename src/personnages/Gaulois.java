@@ -22,12 +22,24 @@ public class Gaulois {
 				+ romain.getNom());
 		romain.recevoirCoup(force / 3);
 	}
+	public void boirePotion(int forcePotion) {
+		this.effetPotion=forcePotion;
+		if(forcePotion==3){
+			
+		}
+		}
 	@Override
 	public String toString() {
 		return "Gaulois [nom=" + nom + ", force=" + force
 				+ ", effetPotion=" + effetPotion + "]";
 	}
 	public static void main(String[] args) {
-		//TODO créer un main permettant de tester la classe Gaulois
+		Gaulois asterix = new Gaulois("Astérix",8);
+		Romain centurius = new Romain("centurius", 5);
+		System.out.println(asterix.getNom());
+		System.out.println(asterix.prendreParole());
+		asterix.parler("bonjour");
+		asterix.frapper(centurius);;
+		
 	}
 }

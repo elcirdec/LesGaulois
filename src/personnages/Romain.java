@@ -13,6 +13,7 @@ public class Romain {
 	public void parler(String texte) {
 		System.out.println(prendreParole() + "« " + texte + "»");
 	}
+
 	private String prendreParole() {
 		return "Le romain " + nom + " : ";
 	}
@@ -23,5 +24,14 @@ public class Romain {
 		} else {
 			parler("J'abandonne...");
 		}
+	}
+	public static void main(String[] args) {
+		Gaulois asterix = new Gaulois("Astérix",8);
+		Romain centurius = new Romain("centurius", 5);
+		System.out.println(centurius.getNom());
+		System.out.println(centurius.prendreParole());
+		centurius.parler("bonjour");
+		centurius.recevoirCoup(10);;;
+		
 	}
 }
