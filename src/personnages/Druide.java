@@ -22,17 +22,24 @@ public class Druide {
 	private String prendreParole() {
 		return "Le druide " + nom + " : ";
 	}
-	public void preparerPotion() {
-		int forceDeLaPotionPreparer;
+	public void preparerPotion() {	
 		Random random= new Random();
-		forceDeLaPotionPreparer=random.nextInt(effetPotionMax);
-		if (forceDeLaPotionPreparer>7) {
+		this.forcePotion=effetPotionMin+random.nextInt(effetPotionMax-effetPotionMin);
+		if (forcePotion>7) {
 			this.parler("J'ai préparé une super potion de force" );
 		} else {
-			this.parler("Je n'ai pas trouvé tous les ingrédients, ma potion est seulement de force"); 
+			this.parler("Je n'ai pas trouvé tous les ingrédients, ma potion est seulement de force"+ forcePotion); 
+		}
+	}
+	public void booster(Gaulois gaulois) {
+		if(gaulois.getNom()=="Obélix") {
+			this.parler("« Non, Obélix !... Tu n’auras pas de potion magique ! ».");
+		}else {
+			gaulois.boirePotion(this.forcePotion);
 		}
 	}
 	
+
 	public static void main(String[] args) {
 		Druide panoramix = new Druide("Panoramix",5,10);
 		panoramix.preparerPotion();
