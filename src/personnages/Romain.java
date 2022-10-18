@@ -4,7 +4,8 @@ public class Romain {
 	private String nom;
 	private int force;
 	public Romain(String nom, int force) {
-		this.nom = nom;
+		assert(force>=0);
+		this.nom = nom;	
 		this.force = force;
 	}
 	public String getNom() {
@@ -18,20 +19,23 @@ public class Romain {
 		return "Le romain " + nom + " : ";
 	}
 	public void recevoirCoup(int forceCoup) {
+		assert(force>=0);
+		int var=force;
 		force -= forceCoup;
 		if (force > 0) {
 			parler("Aïe");
 		} else {
 			parler("J'abandonne...");
 		}
+		assert(force<var);
 	}
 	public static void main(String[] args) {
 		Gaulois asterix = new Gaulois("Astérix",8);
-		Romain centurius = new Romain("centurius", 5);
+		Romain centurius = new Romain("centurius", 6);
 		System.out.println(centurius.getNom());
 		System.out.println(centurius.prendreParole());
 		centurius.parler("bonjour");
-		centurius.recevoirCoup(10);;;
+		centurius.recevoirCoup(10);
 		
 	}
 }
