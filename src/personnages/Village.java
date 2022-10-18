@@ -22,10 +22,27 @@ public class Village {
 	public Gaulois trouverHabitant(int noHabitant) {
 		return villageois[noHabitant];
 	}
+
+	public void afficherVillageois() {
+		System.out.println("Dans le village du chef "+ chef.getNom() + " vivent les légendaire gaulois : ");
+		for(int i=0;i<nbVillageois;i++) {
+			System.out.println("- "+villageois[i].getNom());
+		}
+	}
 	public static void main(String[] args) {
 		Village village=new Village("village des Irréductibles", 30);
-		Gaulois gaulois = village.trouverHabitant(30);
-
+		//Gaulois gaulois = village.trouverHabitant(30);
+		//depacement de capacité
+		Chef chef=new Chef("Abraracourcix",6,village);
+		village.setChef(chef);
+		Gaulois asterix = new Gaulois("Asterix",8);
+		village.ajouterHabitant(asterix);
+//		Gaulois gaulois = village.trouverHabitant(1);
+//		System.out.println(gaulois);
+//		la case du tableau n'est pas initialisé
+		Gaulois obelix = new Gaulois("Obélix",25);
+		village.ajouterHabitant(obelix);
+		village.afficherVillageois();
 		
 	}
 }
