@@ -38,7 +38,6 @@ public class Druide {
 			gaulois.boirePotion(this.forcePotion);
 		}
 	}
-	
 
 	public static void main(String[] args) {
 		Druide panoramix = new Druide("Panoramix",5,10);

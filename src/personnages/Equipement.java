@@ -8,7 +8,7 @@ public enum Equipement {
 	}
 
 	public String toString() {
-		return "Equipement [nom=" + nom + "]";
+		return  nom;
 	}
 
 	
